@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Verified</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://logodownload.org/wp-content/uploads/2017/11/discord-logo-4-1.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #24292e;
+            background-image: url('https://media.discordapp.net/attachments/851389970840944640/851390664788934656/755243061088616458.gif');
+            background-size: 20%;
+            background-repeat: no-repeat;
+            background-position: bottom 0 right 7px;
+            color: #eaeaea;
+        }
+        .container {
+            text-align: center;
+            padding: 60px;
+            background-color: #31363f;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border: 2px solid #181a1f;
+        }
+        h1, h2 {
+            color: #fff;
+            font-weight: 700;
+        }
+        p, small, span {
+            color: #eaeaea;
+            font-size: 1.1rem;
+        }
+        #server_pic {
+            display: block;
+            margin: 20px auto;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .btn {
+            background-color: #60d1f6;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: 700;
+        }
+        .btn:hover {
+            background: #0076ff;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="box">
+        <img id="server_pic" src="https://media.discordapp.net/attachments/851389970840944640/851390664788934656/755243061088616458.gif?ex=66cd9ad8&is=66cc4958&hm=10cf4e10b67b1963f58fe75238715fe236e2f5ac90aba61a23f8192a61442e84&=&width=360&height=360" alt="Server Picture">
+        <h2 id="user-message"></h2>
+        <p>تم توثيق حسابك بنجاح .. يمكنك إغلاق الصفحة هذه</p>
+    </div>
+    <script>
+        window.onload = () => {
+            document.getElementById("user-message").innerHTML = `تم توثيقك بنجاح`;
+            const code = location.href.substring(location.href.indexOf("code") + 5, location.href.length);
+            if (location.href.indexOf("code") > -1) {
+                const req = new XMLHttpRequest();
+                req.open("POST", ""); // ضع رابط التوجيه هنا
+                req.send(code);
+                req.onload = () => {
+                    // قم بإضافة أي كود تود تنفيذه بعد نجاح الطلب هنا
+                };
+            }
+        };
+    </script>
+</body>
+</html>
